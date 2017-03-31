@@ -1,11 +1,7 @@
 .item-container {
-	border: 1px solid black;
-	height: 100%;
 	transform: rotate(90deg);
-}
-
-.item-container.selected {
-	border: 1px solid yellow;
+	position: relative;
+  top: 25%;
 }
 
 .trigger, .attack {

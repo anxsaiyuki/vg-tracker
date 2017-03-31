@@ -19,4 +19,9 @@
   height: 33.3333%;
   width: 50%;
   float: left;
+  border: 1px solid black;
+}
+
+#board .item.selected {
+	border: 1px solid yellow;
 }

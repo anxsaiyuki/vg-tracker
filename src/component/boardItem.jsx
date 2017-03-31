@@ -13,8 +13,9 @@ export default class BoardItem extends Component {
 
 	render() {
 		return (
-			<div onClick={this.selected.bind(this)} className="item">
-				<div className={this.props.selected ? "item-container selected" : "item-container"}>
+			<div onClick={this.selected.bind(this)} className={this.props.selected ? "item selected" : "item"}>
+				<div className="item-container">
+					<div>
 					<div className="trigger">
 						<label>TRIGGER</label>
 						<div>{this.props.value.trigger}</div>
@@ -22,6 +23,7 @@ export default class BoardItem extends Component {
 					<div className="attack">
 						<label>ATTACK</label>
 						<div>{this.props.value.atk}</div>
+					</div>
 					</div>
 				</div>
 			</div>
