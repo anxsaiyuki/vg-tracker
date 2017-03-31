@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import '../css/board.css';
+import '../css/board-item.css';
 
 export default class BoardItem extends Component {
 	constructor(props) {

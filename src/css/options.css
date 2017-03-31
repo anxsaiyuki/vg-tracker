@@ -13,9 +13,3 @@
 	width: 80%;
 	float: left;
 }
-
-#board {
-	border: 1px solid black;
-  height: 100vh;
-  box-sizing: border-box;
-}

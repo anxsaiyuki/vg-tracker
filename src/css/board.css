@@ -5,8 +5,12 @@
 
 #board {
 	border: 1px solid black;
-  height: 100vh;
+  height: 95vh;
   box-sizing: border-box;
+}
+
+#button-container {
+  height: 5vh;
 }
 
 #board .row {
@@ -24,4 +28,9 @@
 
 #board .item.selected {
 	border: 1px solid yellow;
+}
+
+.row-btn {
+  background-color: lightblue;
+  width: 50%;
 }

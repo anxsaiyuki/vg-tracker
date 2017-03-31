@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BoardItem from './boardItem';
 
-import '../css/board-item.css';
+import '../css/board.css';
 
 export default class Board extends Component {
 	constructor(props) {
@@ -53,6 +53,10 @@ export default class Board extends Component {
 
 		return (
 			<div id="board-container">
+				<div id="button-container">
+					<button type="button" className="row-btn">Row1</button>
+					<button type="button" className="row-btn">Row2</button>
+				</div>
 				<div id="board">
 				{boardItems}
 				</div>
