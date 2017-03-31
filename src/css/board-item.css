@@ -1,0 +1,14 @@
+.item-container {
+	border: 1px solid black;
+	height: 100%;
+	transform: rotate(90deg);
+}
+
+.item-container.selected {
+	border: 1px solid yellow;
+}
+
+.trigger, .attack {
+	height: 50%;
+	text-align: center;
+}

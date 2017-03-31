@@ -16,7 +16,7 @@ class Index extends Component {
 
   onSelect(value) {
     this.setState({ selected:value })
-    console.log("test" + value);
+    console.log("selected: " + value);
   }
 
   render() {

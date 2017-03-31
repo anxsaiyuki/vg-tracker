@@ -20,12 +20,3 @@
   width: 50%;
   float: left;
 }
-
-.item-container {
-	border: 1px solid black;
-	height: 100%;
-}
-
-.item-container.selected {
-	border: 1px solid yellow;
-}

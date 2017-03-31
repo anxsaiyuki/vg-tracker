@@ -8,14 +8,21 @@ export default class BoardItem extends Component {
 	}
 
 	selected() {
-		this.props.onSelect(this.props.value)
+		this.props.onSelect(this.props.value.id)
 	}
 
 	render() {
 		return (
 			<div onClick={this.selected.bind(this)} className="item">
 				<div className={this.props.selected ? "item-container selected" : "item-container"}>
-					{this.props.value}
+					<div className="trigger">
+						<label>TRIGGER</label>
+						<div>{this.props.value.trigger}</div>
+					</div>
+					<div className="attack">
+						<label>ATTACK</label>
+						<div>{this.props.value.atk}</div>
+					</div>
 				</div>
 			</div>
 		)

@@ -1,2 +1,1 @@
-# reactathon-ot
 # vg-tracker
