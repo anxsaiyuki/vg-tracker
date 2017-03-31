@@ -1,26 +1,18 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const app = express();
+var express = require('express');
+var path = require('path');
+var app = express();
 
-const port = process.env.PORT || 3000;
-
-const restaurant = require('./routes/restaurant');
-const reservation = require('./routes/reservation');
-
-app.use(express.static('dist'))
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
-app.use(function(req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', "*");
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  next();
+app.get('/', function(req, res){
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-app.use(cors());
-app.use('/restaurant', restaurant);
-app.use('/reservation', reservation);
+app.get('/product/*', function(req, res){
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
+
+app.use(express.static('dist'))
+
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
