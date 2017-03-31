@@ -1,0 +1,21 @@
+#options-container {
+	width: 20%;
+	float: left;
+}
+
+#options {
+	border: 1px solid black;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+#board-container {
+	width: 80%;
+	float: left;
+}
+
+#board {
+	border: 1px solid black;
+  height: 100vh;
+  box-sizing: border-box;
+}
