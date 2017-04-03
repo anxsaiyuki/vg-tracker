@@ -71,7 +71,7 @@ class Index extends Component {
       } else {
         tempItem[id].atk -= this.state.selected;
       }
-    } else {
+    } else if (this.state.triggerBool) {
       tempItem[id].trigger += 1;
     }
     this.setState({ item:tempItem })
@@ -79,6 +79,10 @@ class Index extends Component {
 
   //Row Button Clicked
   onBoardRowSelect(row) {
+    if (this.state.triggerBool) {
+      return
+    }
+
     var row1 = [0, 2, 4];
     var row2 = [1, 3, 5];
     if (row === "row1") {
@@ -94,6 +98,10 @@ class Index extends Component {
 
   //Column Button Clicked
   onBoardColSelect(col) {
+    if (this.state.triggerBool) {
+      return
+    }
+
     var col1 = [0, 1];
     var col2 = [2, 3];
     var col3 = [4, 5];
@@ -163,8 +171,9 @@ class Index extends Component {
       },
     ]
     this.setState({ 
-      item:resetValue,
-      selected:null
+      item: resetValue,
+      selected: null,
+      triggerBool: false,
     })
   }
 
