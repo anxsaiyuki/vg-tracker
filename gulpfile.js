@@ -16,7 +16,7 @@ gulp.task('copy', () => {
       .pipe(gulp.dest('./dist/lib/css'));
 
   gulp.src(folders[3])
-      .pipe(gulp.dest('./dist/fonts'));
+      .pipe(gulp.dest('./dist/lib/fonts'));
 });
 
 gulp.task('clean', () => {
