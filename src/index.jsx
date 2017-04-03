@@ -11,6 +11,7 @@ class Index extends Component {
 
     this.state = {
       selected: null,
+      triggerBool: false,
       operator: "+",
       item: [
         {
@@ -47,27 +48,36 @@ class Index extends Component {
     }
   }
 
-  onSelect(value) {
-    this.setState({ selected:value })
-    console.log("selected: " + value);
+  debugLog(str) {
+    console.log(str);
   }
 
+  //Power Clicked
+  onSelect(value) {
+    this.setState({ 
+      selected: value,
+      triggerBool: false,
+    })
+    this.debugLog("selected: " + value);
+  }
+
+  //Single Board Clicked
   onBoardSelect(id) {
-    console.log(id);
+    this.debugLog(id);
+    var tempItem = this.state.item;
     if (this.state.selected !== null) {
-      var tempItem = this.state.item;
       if (this.state.operator === "+") {
         tempItem[id].atk += this.state.selected;  
       } else {
         tempItem[id].atk -= this.state.selected;
-        if (tempItem[id].atk < 0) {
-          tempItem[id].atk = 0;
-        }
       }
-      this.setState({ item:tempItem })
+    } else {
+      tempItem[id].trigger += 1;
     }
+    this.setState({ item:tempItem })
   }
 
+  //Row Button Clicked
   onBoardRowSelect(row) {
     var row1 = [0, 2, 4];
     var row2 = [1, 3, 5];
@@ -82,6 +92,7 @@ class Index extends Component {
     }
   }
 
+  //Column Button Clicked
   onBoardColSelect(col) {
     var col1 = [0, 1];
     var col2 = [2, 3];
@@ -99,16 +110,26 @@ class Index extends Component {
         this.onBoardSelect(index)
       })
     }
-
   }
 
+  //Operator +/- Clicked
   onOperatorSelect(operator) {
-    console.log(operator);
+    this.debugLog(operator);
     this.setState({ operator: operator });
   }
 
+  //Trigger Crit Clicked
+  onTriggerSelect() {
+    this.debugLog("trigger clicked")
+    this.setState({ 
+      triggerBool: true,
+      selected: null,
+    });
+  }
+
+  //Reset Clicked
   onReset() {
-    console.log("going to reset")
+    this.debugLog("going to reset")
     var resetValue = [
       {
         id: 0,
@@ -159,8 +180,10 @@ class Index extends Component {
         <Options 
           onReset= {this.onReset.bind(this)} 
           onOperatorSelect={this.onOperatorSelect.bind(this)} 
+          onTriggerSelect={this.onTriggerSelect.bind(this)}
           onSelect={this.onSelect.bind(this)} 
           selected={this.state.selected}
+          triggerBool={this.state.triggerBool}
         />
       </div>
     )

@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const del = require('del');
 
 gulp.task('copy', () => {
-  const folders = ['src/*.html', 'src/lib/js/*.js', 'src/lib/css/*.css'];
+  const folders = ['src/*.html', 'src/lib/js/*.js', 'src/lib/css/*.css', 'src/lib/fonts/*'];
   // folders.map(function(folder) {
   //  return gulp.src(folder)
   //             .pipe(gulp.dest('./dist/'));
@@ -14,6 +14,9 @@ gulp.task('copy', () => {
 
   gulp.src(folders[2])
       .pipe(gulp.dest('./dist/lib/css'));
+
+  gulp.src(folders[3])
+      .pipe(gulp.dest('./dist/fonts'));
 });
 
 gulp.task('clean', () => {

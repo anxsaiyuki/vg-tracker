@@ -12,11 +12,10 @@ export default class Options extends Component {
 	}
 
 	onSelect(value) {
-		console.log(value);
 		this.props.onSelect(value);
 	}
 
-	selectOperator() {
+	onOperatorSelect() {
 		if (this.state.operator === "+") {
 			this.setState({ operator:"-" });
 			this.props.onOperatorSelect("-")
@@ -24,6 +23,10 @@ export default class Options extends Component {
 			this.setState({ operator:"+" });
 			this.props.onOperatorSelect("+")
 		}
+	}
+
+	onTriggerSelect() {
+		this.props.onTriggerSelect();
 	}
 
 	onReset() {
@@ -38,7 +41,7 @@ export default class Options extends Component {
 					className={context.props.selected === value ? "powerItem selected" : "powerItem"} 
 					onClick={context.onSelect.bind(context,value,"value")}
 				>
-					<div className="powerValue">{value}</div>
+					<div className={value === 5000 ? "powerValue triggerValue" : "powerValue"}>{value}</div>
 				</li>
 			)
 		})
@@ -46,11 +49,16 @@ export default class Options extends Component {
 			<div id="options-container">
 				<div id="options">
 				  <ul id="powerList">
-				  <li className="powerItem operator" onClick={this.selectOperator.bind(this)}>
-				  	<div className="powerValue">{this.state.operator}</div>
+				  <li className="powerItem operator" onClick={this.onOperatorSelect.bind(this)}>
+				  	<div className="powerValue">
+				  		{this.state.operator === "+" ?
+				  			(<span><i className="fa fa-plus-circle" aria-hidden="true"></i></span>) :
+				  			(<span><i className="fa fa-minus-circle" aria-hidden="true"></i></span>)
+				  		}
+				  	</div>
 				  </li>
 				  {powerNode}
-				  <li className="powerItem">
+				  <li className={this.props.triggerBool ? "powerItem selected" : "powerItem"}  onClick={this.onTriggerSelect.bind(this)}>
 				  	<div className="powerValue">Crit</div>
 				  </li>
 				  <li className="powerItem" onClick={this.onReset.bind(this)}>

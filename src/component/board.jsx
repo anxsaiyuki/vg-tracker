@@ -27,18 +27,18 @@ export default class Board extends Component {
 
 		return (
 			<div id="board-container">
-				<div id="button-container">
-					<button type="button" className="row-btn" onClick={this.onBoardRowSelect.bind(this,"row1")}>Row 1</button>
-					<button type="button" className="row-btn" onClick={this.onBoardRowSelect.bind(this,"row2")}>Row 2</button>
+				<div id="row-btn-container">
+					<button type="button" className="row-btn waves-effect waves-light btn indigo darken-1" onClick={this.onBoardRowSelect.bind(this,"row1")}>Row 1</button>
+					<button type="button" className="row-btn waves-effect waves-light btn indigo darken-1" onClick={this.onBoardRowSelect.bind(this,"row2")}>Row 2</button>
 				</div>
 				<div id="board">
-					<div className="board-container">
+					<div id="board-item-container">
 					{boardItems}
 					</div>
-					<div className="column-btn-container">
-						<button type="button" className="col-btn" onClick={this.onBoardColSelect.bind(this,"col1")}><div>Col 1</div></button>
-						<button type="button" className="col-btn" onClick={this.onBoardColSelect.bind(this,"col2")}><div>Col 2</div></button>
-						<button type="button" className="col-btn" onClick={this.onBoardColSelect.bind(this,"col3")}><div>Col 3</div></button>
+					<div id="column-btn-container">
+						<button type="button" className="col-btn waves-effect waves-light btn" onClick={this.onBoardColSelect.bind(this,"col1")}><div><span>Col1</span></div></button>
+						<button type="button" className="col-btn waves-effect waves-light btn" onClick={this.onBoardColSelect.bind(this,"col2")}><div>Col2</div></button>
+						<button type="button" className="col-btn waves-effect waves-light btn" onClick={this.onBoardColSelect.bind(this,"col3")}><div>Col3</div></button>
 					</div>
 				</div>
 			</div>

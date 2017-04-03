@@ -9,11 +9,7 @@
   box-sizing: border-box;
 }
 
-#board-container {
-	width: 80%;
-	float: left;
-}
-
+/* Power */
 #powerList {
 	list-style: none;
 	height: 100%;
@@ -24,20 +20,25 @@
 
 .powerItem {
 	border: 1px solid black;
-	height: 7.33%;
+	height: 7.7%;
   font-size: 12px;
 }
 
 .powerItem.selected {
-	border: 1px solid yellow;
+	border: 3px solid yellow;
 }
 
 .powerValue {
 	transform: rotate(90deg);
-	width: 0px;
-  margin: auto;
+  display: inline-block;
+  top: 25%;
+  position: relative;
+}
+
+.powerValue.triggerValue {
+	color: red;
 }
 
 .powerItem.operator {
-	font-size: 25px;
+	font-size: 15px;
 }

@@ -1,16 +1,19 @@
-#board-container {
-	width: 80%;
-	float: left;
-}
-
+/*Board General CSS */
 #board {
 	border: 1px solid black;
   height: 95vh;
   box-sizing: border-box;
 }
 
-#button-container {
-  height: 5vh;
+#board-container {
+  width: 80%;
+  float: left;
+}
+
+#board-item-container {
+  width: 90%;
+  float: left;
+  height: 100%;
 }
 
 #board .row {
@@ -24,30 +27,36 @@
   width: 50%;
   float: left;
   border: 1px solid black;
+  border-radius: 50%;
+  background-color: #F4F4F4;
 }
 
-.board-container {
-  width: 90%;
-  float: left;
-  height: 100%;
-}
-
-.column-btn-container {
+/*Column Button*/
+#column-btn-container {
   width: 10%;
   float: left;
   height: 100%;
 }
 
-.col-btn {
-  background-color: lightblue;
+button.col-btn {
   height: 33.333%;
+  width: 100%;
+  padding: 0px;
+  line-height: 0px;
 }
 
 .col-btn div {
   transform: rotate(90deg);
 }
 
-.row-btn {
-  background-color: lightblue;
+/*Row Button*/
+#row-btn-container {
+  height: 5vh;
+  width: 90%;
+}
+
+button.row-btn {
   width: 50%;
+  height: 100%;
+  line-height: 0px;
 }

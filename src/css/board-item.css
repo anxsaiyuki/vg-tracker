@@ -1,7 +1,9 @@
 .item-container {
 	transform: rotate(90deg);
 	position: relative;
+  width: inherit;
   top: 25%;
+  left: 25%;
 }
 
 .trigger, .attack {
