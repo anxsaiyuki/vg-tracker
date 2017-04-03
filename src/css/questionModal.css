@@ -6,3 +6,8 @@
 .question-description {
 	font-size: 10px;
 }
+
+.remodal-container {
+	transform: rotate(90deg);
+	margin: 15px;
+}
