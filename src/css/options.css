@@ -13,3 +13,31 @@
 	width: 80%;
 	float: left;
 }
+
+#powerList {
+	list-style: none;
+	height: 100%;
+	padding: 0px;
+  text-align: center;
+  margin: 0px;
+}
+
+.powerItem {
+	border: 1px solid black;
+	height: 7.33%;
+  font-size: 12px;
+}
+
+.powerItem.selected {
+	border: 1px solid yellow;
+}
+
+.powerValue {
+	transform: rotate(90deg);
+	width: 0px;
+  margin: auto;
+}
+
+.powerItem.operator {
+	font-size: 25px;
+}

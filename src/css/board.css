@@ -26,8 +26,25 @@
   border: 1px solid black;
 }
 
-#board .item.selected {
-	border: 1px solid yellow;
+.board-container {
+  width: 90%;
+  float: left;
+  height: 100%;
+}
+
+.column-btn-container {
+  width: 10%;
+  float: left;
+  height: 100%;
+}
+
+.col-btn {
+  background-color: lightblue;
+  height: 33.333%;
+}
+
+.col-btn div {
+  transform: rotate(90deg);
 }
 
 .row-btn {

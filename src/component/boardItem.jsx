@@ -7,13 +7,13 @@ export default class BoardItem extends Component {
 		super(props)	
 	}
 
-	selected() {
-		this.props.onSelect(this.props.value.id)
+	onItemSelect(value) {
+		this.props.onBoardSelect(value);
 	}
 
 	render() {
 		return (
-			<div onClick={this.selected.bind(this)} className={this.props.selected ? "item selected" : "item"}>
+			<div className="item" onClick={this.onItemSelect.bind(this, this.props.value.id)}>
 				<div className="item-container">
 					<div>
 					<div className="trigger">

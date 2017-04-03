@@ -6,59 +6,40 @@ import '../css/board.css';
 export default class Board extends Component {
 	constructor(props) {
 		super(props)	
-		this.state = {
-			item: [
-				{
-					id: 1,
-					trigger: 0,
-					atk: 0,
-				},
-				{
-					id: 2,
-					trigger: 0,
-					atk: 0,
-				},
-				{
-					id: 3,
-					trigger: 0,
-					atk: 0,
-				},
-				{
-					id: 4,
-					trigger: 0,
-					atk: 0,
-				},
-				{
-					id: 5,
-					trigger: 0,
-					atk: 0,
-				},
-				{
-					id: 6,
-					trigger: 0,
-					atk: 0,
-				},
-			]
-		}
+	}
+
+	onBoardRowSelect(row) {
+		this.props.onBoardRowSelect(row);
+	}
+
+	onBoardColSelect(col) {
+		this.props.onBoardColSelect(col);
 	}
 
 	render() {
 		var context = this;
 
-		var boardItems = this.state.item.map(function(item, key) {
+		var boardItems = this.props.item.map(function(item, key) {
 			return (
-				<BoardItem onSelect={context.props.onSelect} value={item} selected={context.props.selected === item.id ? true : false}/>
+				<BoardItem onBoardSelect={context.props.onBoardSelect} value={item}/>
 			)
 		})
 
 		return (
 			<div id="board-container">
 				<div id="button-container">
-					<button type="button" className="row-btn">Row1</button>
-					<button type="button" className="row-btn">Row2</button>
+					<button type="button" className="row-btn" onClick={this.onBoardRowSelect.bind(this,"row1")}>Row 1</button>
+					<button type="button" className="row-btn" onClick={this.onBoardRowSelect.bind(this,"row2")}>Row 2</button>
 				</div>
 				<div id="board">
-				{boardItems}
+					<div className="board-container">
+					{boardItems}
+					</div>
+					<div className="column-btn-container">
+						<button type="button" className="col-btn" onClick={this.onBoardColSelect.bind(this,"col1")}><div>Col 1</div></button>
+						<button type="button" className="col-btn" onClick={this.onBoardColSelect.bind(this,"col2")}><div>Col 2</div></button>
+						<button type="button" className="col-btn" onClick={this.onBoardColSelect.bind(this,"col3")}><div>Col 3</div></button>
+					</div>
 				</div>
 			</div>
 		)
