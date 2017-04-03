@@ -2,11 +2,17 @@
 	transform: rotate(90deg);
 	position: relative;
   width: inherit;
-  top: 25%;
+  top: 20%;
   left: 25%;
+  display: inline-block;
 }
 
 .trigger, .attack {
 	height: 50%;
 	text-align: center;
+}
+
+.item-label {
+	color: black;
+	font-weight: bold;
 }

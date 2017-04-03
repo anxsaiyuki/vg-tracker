@@ -52,11 +52,22 @@ button.col-btn {
 /*Row Button*/
 #row-btn-container {
   height: 5vh;
-  width: 90%;
+  width: 100%;
 }
 
 button.row-btn {
-  width: 50%;
+  width: 45%;
   height: 100%;
   line-height: 0px;
+}
+
+.question-box {
+  width: 10%;
+  height: 100%;
+  display: inline-block;
+}
+
+.question-mark {
+  position: relative;
+  left: 25%;
 }

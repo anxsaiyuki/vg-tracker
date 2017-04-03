@@ -44,8 +44,18 @@ class Index extends Component {
           trigger: 0,
           atk: 0,
         },
-      ]
+      ],
+      inst: ''
     }
+  }
+
+  componentDidMount() {
+    let context = this;
+    $( document ).ready(function() {
+      context.setState({
+        inst:$('[data-remodal-id=modal]').remodal()
+      })
+    });
   }
 
   debugLog(str) {

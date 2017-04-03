@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BoardItem from './boardItem';
+import QuestionModal from './questionModal';
 
 import '../css/board.css';
 
@@ -30,6 +31,8 @@ export default class Board extends Component {
 				<div id="row-btn-container">
 					<button type="button" className="row-btn waves-effect waves-light btn indigo darken-1" onClick={this.onBoardRowSelect.bind(this,"row1")}>Row 1</button>
 					<button type="button" className="row-btn waves-effect waves-light btn indigo darken-1" onClick={this.onBoardRowSelect.bind(this,"row2")}>Row 2</button>
+					<div className="question-box" data-remodal-target="modal" href=""><i className="question-mark fa fa-question-circle" aria-hidden="true"></i></div>
+					<QuestionModal />
 				</div>
 				<div id="board">
 					<div id="board-item-container">

@@ -16,14 +16,14 @@ export default class BoardItem extends Component {
 			<div className="item" onClick={this.onItemSelect.bind(this, this.props.value.id)}>
 				<div className="item-container">
 					<div>
-					<div className="trigger">
-						<label>TRIGGER</label>
-						<div>{this.props.value.trigger}</div>
-					</div>
-					<div className="attack">
-						<label>ATTACK</label>
-						<div>{this.props.value.atk}</div>
-					</div>
+						<div className="trigger">
+							<label className="item-label">CRIT</label>
+							<div>+ {this.props.value.trigger}</div>
+						</div>
+						<div className="attack">
+							<label className="item-label">ATTACK</label>
+							<div>+ {this.props.value.atk}</div>
+						</div>
 					</div>
 				</div>
 			</div>
